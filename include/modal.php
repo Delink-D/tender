@@ -41,24 +41,28 @@
       </div>
       <div class="modal-body">
         <form action="functions/signup.php" method="post">
-          <div class="form-group">
-            <label for="username">User Name</label>
-            <input type="text" name="userName" class="form-control" placeholder="User Name" id="username">
+          <div class="row">
+            <div class="form-group col">
+              <label for="up-username">User Name</label>
+              <input type="text" name="userName" class="form-control" placeholder="User Name" id="up-username">
+            </div>
+
+            <div class="form-group col">
+              <label for="email">E-Mail</label>
+              <input type="text" name="email" class="form-control" placeholder="E-Mail" id="email">
+            </div>
           </div>
 
-          <div class="form-group">
-            <label for="fname">First Name</label>
-            <input type="text" name="firstName" class="form-control" placeholder="First Name" id="fname">
-          </div>
+          <div class="row">
+            <div class="form-group col">
+              <label for="fname">First Name</label>
+              <input type="text" name="firstName" class="form-control" placeholder="First Name" id="fname">
+            </div>
 
-          <div class="form-group">
-            <label for="lname">Last Name</label>
-            <input type="text" name="lastName" class="form-control" placeholder="Last Name" id="lname">
-          </div>
-
-          <div class="form-group">
-            <label for="email">E-Mail</label>
-            <input type="text" name="email" class="form-control" placeholder="E-Mail" id="email">
+            <div class="form-group col">
+              <label for="lname">Last Name</label>
+              <input type="text" name="lastName" class="form-control" placeholder="Last Name" id="lname">
+            </div>
           </div>
 
           <div class="form-group">
@@ -75,9 +79,16 @@
             </select>
           </div>
 
-          <div class="form-group">
-            <label for="password">Password</label>
-            <input type="password" name="password" class="form-control" placeholder="Password" id="password">
+          <div class="row">
+            <div class="form-group col">
+              <label for="up-password">Password</label>
+              <input type="password" name="password" class="form-control" placeholder="Password" id="up-password">
+            </div>
+
+            <div class="form-group col">
+              <label for="up-re-password">Re-Enter Password</label>
+              <input type="password" name="passwordReEnter" class="form-control" placeholder="Re-Enter Password" id="up-re-password">
+            </div>
           </div>
 
           <div class="form-group">
