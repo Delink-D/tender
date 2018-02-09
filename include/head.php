@@ -59,5 +59,3 @@
           </div>
         </div>
       </div>
-      <!-- body -->
-      <div class="container body padding0">
