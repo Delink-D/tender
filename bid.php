@@ -11,6 +11,7 @@
 <div class="container tender-body padding0">
   <div id="tender-header" style="position: relative;">
     <h3>Tender No. <strong>DLNK/T/04-02-2018</strong> Details</h3>
+    <button class="btn btn-sm btn-success" style="position: absolute; top: 10px; right: 10px;" data-toggle="tooltip" data-placement="bottom" title="Place Your Bid">Bid Now</button>
   </div>
   <div class="padding-10 group" style="position: relative;">
     <div class="col-5 float-left">
@@ -21,6 +22,7 @@
       <p class="c-text-bold tender-text-detail">Tender Closing Day: <span class="text-danger">04-03-2018 12:00 PM</span></p>
       <p class="c-text-bold tender-text-detail">Tender Security: 100000 Ksh</p>
     </div>
+    <a href="" data-toggle="modal" data-target="#tenderDescModal" style="position: absolute;right: 10px; bottom: 10px;">Tender Description</a>
   </div>
 </div>
 
