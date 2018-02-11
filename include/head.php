@@ -2,6 +2,8 @@
   error_reporting(0);
   session_start();
 
+  include 'database/db.php';
+
   if ($_SESSION['userIn']) {
     $username = $_SESSION['username'];
   }
@@ -51,9 +53,9 @@
 
                 <div class="dropdown-menu" aria-labelledby="profile">
                   <a class="dropdown-item" href="#">Profile</a>
-                  <a class="dropdown-item" href="#">Active Bids</a>
-                  <a class="dropdown-item" href="#">Add Tenders</a>
-                  <a class="dropdown-item" href="#">Past Tenders</a>
+                  <a class="dropdown-item" href="activebids.php">Active Bids</a>
+                  <a class="dropdown-item" href="tenderadd.php">Add Tenders</a>
+                  <a class="dropdown-item" href="pastbids.php">Past Tenders</a>
                   <div class="dropdown-divider"></div>
                   <a class="dropdown-item" href="#">Sign Out</a>
                 </div>
