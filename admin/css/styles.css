@@ -1,0 +1,77 @@
+/*all*/
+.group:before,
+.group:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+.padding-0 {
+  padding: 0!important;
+}
+.margin-0 {
+  margin: 0!important;
+}
+.margin-top-20 {
+  margin-top: 20px;
+}
+.margin-top-50 {
+  margin-top: 50px;
+}
+
+/*Admin panel styles*/
+.top-nav {
+  height: 52px;
+  position: fixed;
+  line-height: 52px;
+  left: 0;
+  top: 0;
+  z-index: 201;
+  background: #006064;
+  width: 100%;
+  min-width: calc(814px + 210px);
+}
+.side-bar {
+  background: #004D40;
+  width: 210px;
+  float: left;
+  position: fixed;
+  top: 52px;
+    z-index: 199;
+  height: calc(100% - 52px);
+}
+.my-nav > li > a {
+  color: #f2f2f2;
+  font-weight: bold;
+}
+.nav > li > a:hover {
+  background-color: #00695C;
+}
+.admin-heading {
+  line-height: 52px;
+  color: #f2f2f2;
+}
+.top-nav {
+  font-family: 'Fjalla One', sans-serif;
+}
+.body-main {
+  float: right;
+  position: relative;
+  padding: 30px 5% 20px 5%;
+  top: 52px;
+  width: calc(100% - 210px);
+}
+.box {
+  padding: 15px;
+  border: 1px solid #e5e6e9;
+  border-radius: 3px;
+  background: #fff;
+}
+
+.two-box {
+  width: 47%;
+  float: left;
+  min-height: 155px;
+}
+.two-box:not(:last-child) {
+  margin-right: 4%;
+}
