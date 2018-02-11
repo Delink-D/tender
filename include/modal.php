@@ -9,7 +9,7 @@
         </button>
       </div>
       <div class="modal-body">
-        <form action="functions/login.php" method="post">
+        <form action="functions/login.php" method="post" id="signInForm">
           <div class="form-group">
             <label for="username">User Name</label>
             <input type="text" name="userName" class="form-control" placeholder="User Name" id="username">
@@ -21,7 +21,7 @@
           </div>
 
           <div class="form-group">
-            <input type="submmit" name="login" class="btn btn-primary" value="SignIn">
+            <input type="submit" name="login" class="btn btn-primary" value="SignIn">
           </div>
         </form>
       </div>
@@ -40,7 +40,7 @@
         </button>
       </div>
       <div class="modal-body">
-        <form action="functions/signup.php" method="post">
+        <form action="functions/signup.php" method="post" id="signUpForm">
           <div class="row">
             <div class="form-group col">
               <label for="up-username">User Name</label>
@@ -65,34 +65,38 @@
             </div>
           </div>
 
-          <div class="form-group">
-            <label for="natid">National Id</label>
-            <input type="text" name="natId" class="form-control" placeholder="National Id" id="natid">
+          <div class="row">
+            <div class="form-group col">
+              <label for="natid">National Id</label>
+              <input type="text" name="natId" class="form-control" placeholder="National Id" id="natid">
+            </div>
           </div>
 
-          <div class="form-group">
-            <label for="company">Company</label>
-            <select name="userName" class="form-control" id="company">
-              <option value="">Select Company</option>
-              <option value="1">Delink In</option>
-              <option value="2">Safaricom In</option>
-            </select>
+          <div class="row">
+            <div class="form-group col">
+              <label for="company">Company</label>
+              <select name="company" class="form-control" id="company">
+                <option value="">Select Company</option>
+                <option value="1">Delink In</option>
+                <option value="2">Safaricom In</option>
+              </select>
+            </div>
           </div>
 
           <div class="row">
             <div class="form-group col">
               <label for="up-password">Password</label>
-              <input type="password" name="password" class="form-control" placeholder="Password" id="up-password">
+              <input type="text" name="password" class="form-control" placeholder="Password" id="up-password">
             </div>
 
             <div class="form-group col">
               <label for="up-re-password">Re-Enter Password</label>
-              <input type="password" name="passwordReEnter" class="form-control" placeholder="Re-Enter Password" id="up-re-password">
+              <input type="text" name="passwordReEnter" class="form-control" placeholder="Re-Enter Password" id="up-re-password">
             </div>
           </div>
 
           <div class="form-group">
-            <input type="submmit" name="signup" class="btn btn-primary" value="SignUp">
+            <input type="submit" name="signup" class="btn btn-primary w-50" value="SignUp">
           </div>
         </form>
       </div>
