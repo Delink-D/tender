@@ -7,3 +7,9 @@ include '../env/db.php';
 $userId = $_POST['userName'];
 $pass = $_POST['password'];
 
+if ($_POST['login']) {
+  // get user details
+
+} else {
+  header("location: " . $server ."?msg=required");
+}
