@@ -19,6 +19,20 @@ if ($_POST['login']) {
 
   $uRow = mysqli_fetch_assoc($query);
   $user = $uRow;
+  $comId = $uRow['company'];
+
+  // get the company details
+  $cSql = "SELECT * FROM companies WHERE id = '$comId'";
+  $cQuery = mysqli_query($db, $sql);
+
+  if (mysqli_num_rows($cQuery) !== 1) {
+    // no comapny fetched
+    header("location: " . $server ."?msg=company");
+  }
+
+  $cRow = mysqli_fetch_assoc($cQuery);
+  $userCompany = $cRow;
+
 } else {
   header("location: " . $server ."?msg=required");
 }
