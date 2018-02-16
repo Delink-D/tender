@@ -68,3 +68,5 @@
           </div>
         </div>
       </div>
+      <!-- include the error file -->
+      <?php include 'include/errors.php'; ?>
