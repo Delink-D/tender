@@ -33,6 +33,19 @@ if ($_POST['login']) {
   $cRow = mysqli_fetch_assoc($cQuery);
   $userCompany = $cRow;
 
+  if ($user['password'] === $pass) {
+    // success login plus set sessions
+    $_SESSION['_login'] = true;
+    $_SESSION['_user'] = $user;
+    $_SESSION['_company'] = $userCompany;
+
+    header("location: " . $server ."?msg=suclogin");
+
+  } else {
+    // password error
+    header("location: " . $server ."?msg=user");
+  }
+
 } else {
   header("location: " . $server ."?msg=required");
 }
