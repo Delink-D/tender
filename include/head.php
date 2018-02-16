@@ -2,10 +2,10 @@
   error_reporting(0);
   session_start();
 
-  include 'database/db.php';
+  include 'env/db.php';
 
-  if ($_SESSION['userIn']) {
-    $username = $_SESSION['username'];
+  if ($_SESSION['_login']) {
+    $username = $_SESSION['_user']['username'];
   }
 ?>
 <!DOCTYPE html>
@@ -37,7 +37,7 @@
 
           <div class="col-5 float-right">
             <div class="text-right">
-              <?php if (!$_SESSION['userIn']) {?>
+              <?php if (!$_SESSION['_login']) {?>
               <button type="button" class="btn btn-outline-success btn-sm" data-toggle="modal" data-target="#signinModal">
                 SignUp
               </button>
@@ -45,10 +45,10 @@
                 SignIn
               </button>
 
-              <?php } if ($_SESSION['userIn']) {?>
+              <?php } if ($_SESSION['_login']) {?>
               <div class="dropdown">
-                <a class="btn dropdown-toggle" href="#" role="button" id="profile" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                  Your User Name <i class="material-icons">account_circle</i>
+                <a class="btn dropdown-toggle" style="font-size: 22px;" href="#" role="button" id="profile" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  <?php echo 'Welcome Back ' . $username; ?> <i class="material-icons" style="font-size: 22px;">account_circle</i>
                 </a>
 
                 <div class="dropdown-menu" aria-labelledby="profile">
@@ -57,7 +57,7 @@
                   <a class="dropdown-item" href="tenderadd.php">Add Tenders</a>
                   <a class="dropdown-item" href="pastbids.php">Past Tenders</a>
                   <div class="dropdown-divider"></div>
-                  <a class="dropdown-item" href="#">Sign Out</a>
+                  <a class="dropdown-item" href="functions/logout.php">Sign Out</a>
                 </div>
               </div>
               <?php } ?>

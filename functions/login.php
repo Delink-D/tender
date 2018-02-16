@@ -35,6 +35,7 @@ if ($_POST['login']) {
 
   if ($user['password'] === $pass) {
     // success login plus set sessions
+    session_start();
     $_SESSION['_login'] = true;
     $_SESSION['_user'] = $user;
     $_SESSION['_company'] = $userCompany;
