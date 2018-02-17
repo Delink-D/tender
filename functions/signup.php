@@ -27,6 +27,20 @@ if ($_POST['signup']) {
     $sql = "INSERT INTO users (firstname, lastname, username, email, nationalId, company, password)
           VALUES('$firstName','$lastName','$userName','$email','$natId','$company','$password')";
     $query = mysqli_query($db, $sql) or die(header('location: ' . $server . '?msg=error-saving'));
+
+    if ($query) {
+      // get saved user
+      $id = mysqli_insert_id($db);
+      $getUser = "SELECT * FROM users WHERE _id = '$id'";
+      $qUser = mysqli_query($db, $getUser) or die(header('location: ' . $server . '?msg=error-fetching'));
+
+      // get company details
+      $getCompany = "SELECT * FROM companies WHERE _id = '$company'";
+      $qCompany = mysqli_query($db, $getCompany) or die(header('location: ' . $server . '?msg=error-fetching'));
+
+    }
+  }
+
 } else {
   // return to home page
   header('location: ' . $server . '?msg=required');
