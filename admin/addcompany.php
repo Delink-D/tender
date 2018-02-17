@@ -1,6 +1,6 @@
 <div>
   <h3>Add Comapy <small>Form</small></h3>
-  <form>
+  <form action="insert/insert.company.php" method="post" id="vld">
     <div class="row">
       <div class="form-group col">
         <label>Company Reg No</label>
@@ -37,6 +37,7 @@
           <option value="y">Youth</option>
           <option value="yw">Youth and Women</option>
           <option value="m">Minorities</option>
+          <option value="g">General</option>
         </select>
       </div>
     </div>
