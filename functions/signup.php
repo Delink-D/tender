@@ -38,6 +38,30 @@ if ($_POST['signup']) {
       $getCompany = "SELECT * FROM companies WHERE _id = '$company'";
       $qCompany = mysqli_query($db, $getCompany) or die(header('location: ' . $server . '?msg=error-fetching'));
 
+      if (mysqli_num_rows($qUser) === 1 && mysqli_num_rows($qCompany) === 1) {
+        $rowU = mysqli_fetch_assoc($qUser);
+        $user = $rowU;
+
+        $rowC = mysqli_fetch_assoc($qCompany);
+        $userCompany = $rowC;
+
+        /* 
+          success saving 
+          set session as a login user
+        */
+
+        session_start();
+        $_SESSION['_login'] = true;
+        $_SESSION['_user'] = $user;
+        $_SESSION['_company'] = $userCompany;
+
+        // redirect with success
+        header('location: ' . $server . '?msg=suclogin');
+
+      } else {
+        // return to home page
+        header('location: ' . $server . '?msg=error-login');
+      }
     }
   }
 
