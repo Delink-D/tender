@@ -48,7 +48,7 @@
               <?php } if ($_SESSION['_login']) {?>
               <div class="dropdown">
                 <a class="btn dropdown-toggle" style="font-size: 22px;" href="#" role="button" id="profile" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                  <?php echo 'Welcome Back ' . $username; ?> <i class="material-icons" style="font-size: 22px;">account_circle</i>
+                  <?php echo 'Welcome ' . $username; ?> <i class="material-icons" style="font-size: 22px;">account_circle</i>
                 </a>
 
                 <div class="dropdown-menu" aria-labelledby="profile">
@@ -62,11 +62,11 @@
               </div>
               <?php } ?>
             </div>
+            <!-- include the error file -->
+            <?php include 'include/errors.php'; ?>
 
             <!-- include modal file -->
             <?php include 'include/modal.php'; ?>
           </div>
         </div>
-      </div>
-      <!-- include the error file -->
-      <?php include 'include/errors.php'; ?>
+      </div>      

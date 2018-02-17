@@ -36,6 +36,9 @@ body {
   border-bottom: 4px solid #424E6D;
   background: linear-gradient(#FDFDFE, #D3DCED);
 }
+.container-errors {
+  position: absolute;
+}
 
 /*body*/
 .body {
