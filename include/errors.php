@@ -36,7 +36,7 @@
   if ($error === 'saved') {
     echo "
       <div class='alert alert-success' role='alert'>
-        Success saving a record to <strong>E-Tender</strong>
+        Successfuly saved the record into the <strong>E-Tender</strong> database!
         <button type='button' class='close' data-dismiss='alert' aria-label='Close'>
           <span aria-hidden='true'>&times;</span>
         </button>
@@ -67,6 +67,16 @@
     echo "
       <div class='alert alert-danger' role='alert'>
         Error while saving a record!! try again later!
+        <button type='button' class='close' data-dismiss='alert' aria-label='Close'>
+          <span aria-hidden='true'>&times;</span>
+        </button>
+      </div>
+    ";
+  }
+  if ($error === 'exist') {
+    echo "
+      <div class='alert alert-danger' role='alert'>
+        The record you are trying to add already exist in the database!!
         <button type='button' class='close' data-dismiss='alert' aria-label='Close'>
           <span aria-hidden='true'>&times;</span>
         </button>
