@@ -89,7 +89,7 @@ $(document).ready(function () {
       },
       passwordReEnter: {
         required: true,
-        equalTo: "#password"
+        equalTo: "#up-password"
       }
     },
 
