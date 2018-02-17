@@ -15,6 +15,18 @@ $password = $_POST['password'];
 if ($_POST['signup']) {
   // if all is good
 
+  // check if user exist
+  $check = "SELECT * FROM users WHERE username = '$userName'";
+  $checkQ = mysqli_query($db, $check) or die(header('location: ' . $server . '?msg=error-fetching'));
+
+  if (mysqli_num_rows($checkQ) > 0) {
+    header('location: ' . $server . '?msg=exist');
+    exit();
+  } else {
+    // insert user
+    $sql = "INSERT INTO users (firstname, lastname, username, email, nationalId, company, password)
+          VALUES('$firstName','$lastName','$userName','$email','$natId','$company','$password')";
+    $query = mysqli_query($db, $sql) or die(header('location: ' . $server . '?msg=error-saving'));
 } else {
   // return to home page
   header('location: ' . $server . '?msg=required');
