@@ -77,8 +77,20 @@
               <label for="company">Company</label>
               <select name="company" class="form-control" id="company">
                 <option value="">Select Company</option>
-                <option value="1">Delink In</option>
-                <option value="2">Safaricom In</option>
+                <?php
+                  $sql = "SELECT * FROM companies";
+                  $query = mysqli_query($db, $sql);
+
+                  if (mysqli_num_rows($query) < 1) {
+                    echo "<option value=''>NO COMPANIES YET!!</option>";
+                  }
+
+                  while ($row = mysqli_fetch_assoc($query)) {
+                    $company_id = $row['_id'];
+                    $company_name = $row['company_name'];
+                    echo "<option value='$company_id'>$company_name</option>";
+                  }
+                ?>
               </select>
             </div>
           </div>
