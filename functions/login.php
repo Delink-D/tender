@@ -22,23 +22,20 @@ if ($_POST['login']) {
   $comId = $uRow['company'];
 
   // get the company details
-  $cSql = "SELECT * FROM companies WHERE id = '$comId'";
-  $cQuery = mysqli_query($db, $sql);
+  $cSql = "SELECT * FROM companies WHERE _id = '$comId'";
+  $cQuery = mysqli_query($db, $cSql);
 
-  if (mysqli_num_rows($cQuery) !== 1) {
+  if (mysqli_num_rows($cQuery) < 1) {
     // no comapny fetched
     header("location: " . $server ."?msg=company");
   }
-
-  $cRow = mysqli_fetch_assoc($cQuery);
-  $userCompany = $cRow;
 
   if ($user['password'] === $pass) {
     // success login plus set sessions
     session_start();
     $_SESSION['_login'] = true;
     $_SESSION['_user'] = $user;
-    $_SESSION['_company'] = $userCompany;
+    $_SESSION['_company'] = mysqli_fetch_assoc($cQuery);
 
     header("location: " . $server ."?msg=suclogin");
 
