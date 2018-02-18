@@ -44,7 +44,7 @@
 
       <div class="form-group col">
         <label for="t-closing">Tender Closing</label>
-        <input type="text" name="t_closing" class="form-control" placeholder="Tender Closing Date" id="t-closing">
+        <input type="date" name="t_closing" class="form-control" placeholder="Tender Closing Date" id="t-closing">
       </div>
     </div>
 
