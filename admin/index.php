@@ -31,13 +31,13 @@
             <a class="nav-link" href="?page=addcompany">Add Company</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Add List</a>
+            <a class="nav-link" href="#">Tenders</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Add Place</a>
+            <a class="nav-link" href="#">Active Tenders</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">View Places</a>
+            <a class="nav-link" href="#">Bids</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="/admin/add-admin">Add Admin</a>
