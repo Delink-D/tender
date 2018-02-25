@@ -83,5 +83,25 @@
       </div>
     ";
   }
+  if ($error === 'updated') {
+    echo "
+      <div class='alert alert-success' role='alert'>
+        The record was updated successfuly!
+        <button type='button' class='close' data-dismiss='alert' aria-label='Close'>
+          <span aria-hidden='true'>&times;</span>
+        </button>
+      </div>
+    ";
+  }
+  if ($error === 'not-updated') {
+    echo "
+      <div class='alert alert-danger' role='alert'>
+        The record was not updated an ERROR occured, try again!
+        <button type='button' class='close' data-dismiss='alert' aria-label='Close'>
+          <span aria-hidden='true'>&times;</span>
+        </button>
+      </div>
+    ";
+  }
 ?>  
 </div>
