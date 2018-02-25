@@ -1,4 +1,8 @@
 $(document).ready(function () {
+  $(".table-tenders").on("click", "tr[data-url]", function () {
+    window.location = $(this).data("url");
+  });
+
   $.validator.setDefaults({
     errorClass: 'help-block',
 

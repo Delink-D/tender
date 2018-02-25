@@ -9,7 +9,7 @@
     include 'include/navigation.php';
   ?>
 
-  <table class="table table-sm table-hover">
+  <table class="table table-sm table-hover table-tenders">
     <thead>
       <tr>
         <th scope="col">#</th>
@@ -65,8 +65,10 @@
                 break;
             }
 
+            $url = 'bid.php?id='.$_id;
+
           echo "
-            <tr onclick='window.location='bid.php?id=$_id';''>
+            <tr class='t-row' data-url=$url>
               <th scope='row'>$count</th>
               <td>$c_name</td>
               <td>$t_num</td>
