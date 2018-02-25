@@ -1,5 +1,5 @@
 <?php
-  // error_reporting(0);
+  error_reporting(0);
   include '../env/db.php';
 ?>
 <!DOCTYPE html>
@@ -31,7 +31,7 @@
             <a class="nav-link" href="?page=addcompany">Add Company</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Tenders</a>
+            <a class="nav-link" href="?page=tenders">Tenders</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="#">Active Tenders</a>
@@ -62,6 +62,9 @@
             }
             if ($page === 'addcompany') {
               include 'addcompany.php';
+            }
+            if ($page === 'tenders') {
+              include 'tenders.php';
             }else {
               include 'dashboard.php';
             }
