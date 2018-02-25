@@ -21,86 +21,62 @@
       </tr>
     </thead>
     <tbody>
-      <tr onclick="window.location='bid.php?id=1';">
-        <th scope="row">1</th>
-        <td>Delink Inc</td>
-        <td>DLNK/T/04-02-2018</td>
-        <td>Open to All</td>
-        <td>04-03-2018 12:00 PM</td>
-        <td>100,000 Ksh</td>
-      </tr>
-      <tr>
-        <th scope="row">1</th>
-        <td>Delink Inc</td>
-        <td>DLNK/T/04-02-2018</td>
-        <td>Open to All</td>
-        <td>04-03-2018 12:00 PM</td>
-        <td>100,000 Ksh</td>
-      </tr>
-      <tr>
-        <th scope="row">1</th>
-        <td>Delink Inc</td>
-        <td>DLNK/T/04-02-2018</td>
-        <td>Open to All</td>
-        <td>04-03-2018 12:00 PM</td>
-        <td>100,000 Ksh</td>
-      </tr>
-      <tr>
-        <th scope="row">1</th>
-        <td>Delink Inc</td>
-        <td>DLNK/T/04-02-2018</td>
-        <td>Open to All</td>
-        <td>04-03-2018 12:00 PM</td>
-        <td>100,000 Ksh</td>
-      </tr>
-      <tr>
-        <th scope="row">1</th>
-        <td>Delink Inc</td>
-        <td>DLNK/T/04-02-2018</td>
-        <td>Open to All</td>
-        <td>04-03-2018 12:00 PM</td>
-        <td>100,000 Ksh</td>
-      </tr>
-      <tr>
-        <th scope="row">1</th>
-        <td>Delink Inc</td>
-        <td>DLNK/T/04-02-2018</td>
-        <td>Open to All</td>
-        <td>04-03-2018 12:00 PM</td>
-        <td>100,000 Ksh</td>
-      </tr>
-      <tr>
-        <th scope="row">1</th>
-        <td>Delink Inc</td>
-        <td>DLNK/T/04-02-2018</td>
-        <td>Open to All</td>
-        <td>04-03-2018 12:00 PM</td>
-        <td>100,000 Ksh</td>
-      </tr>
-      <tr>
-        <th scope="row">1</th>
-        <td>Delink Inc</td>
-        <td>DLNK/T/04-02-2018</td>
-        <td>Open to All</td>
-        <td>04-03-2018 12:00 PM</td>
-        <td>100,000 Ksh</td>
-      </tr>
-      <tr>
-        <th scope="row">1</th>
-        <td>Delink Inc</td>
-        <td>DLNK/T/04-02-2018</td>
-        <td>Open to All</td>
-        <td>04-03-2018 12:00 PM</td>
-        <td>100,000 Ksh</td>
-      </tr>
-      <tr>
-        <th scope="row">1</th>
-        <td>Delink Inc</td>
-        <td>DLNK/T/04-02-2018</td>
-        <td>Open to All</td>
-        <td>04-03-2018 12:00 PM</td>
-        <td>100,000 Ksh</td>
-      </tr>
+      <?php
+        // get the approved tenders
+        $sql = "SELECT * FROM tenders WHERE approved = '1' AND expired = '0'";
+        $query = mysqli_query($db, $sql);
+
+        if (mysqli_num_rows($query) < 1) {
+          echo "<tr>
+                  <th colspan='6'>There are not tenders to display!!</th>
+                </tr>";
+        }
+
+        $count = 0;
+        while ($row = mysqli_fetch_assoc($query)) {
+          $_id = $row['_id'];
+          $c_name = $row['company_name'];
+          $t_num = $row['tender_number'];
+          $t_cat = $row['tender_cat'];
+          $t_closing = $row['tender_closing'];
+          $t_security = $row['tender_security'];
+          $count++;
+
+          // category
+            switch ($t_cat) {
+              case 'y':
+                $category = "Youth";
+                break;
+              
+              case 'yw':
+                $category = "Youth & Women";
+                break;
+
+              case 'm':
+                $category = "Minorities";
+                break;
+
+              case 'oa':
+                $category = "Open to All";
+                break;
+
+              default:
+                $category = "N/A";
+                break;
+            }
+
+          echo "
+            <tr onclick='window.location='bid.php?id=$_id';''>
+              <th scope='row'>$count</th>
+              <td>$c_name</td>
+              <td>$t_num</td>
+              <td>$category</td>
+              <td>$t_closing</td>
+              <td>Ksh. $t_security</td>
+            </tr>
+          ";
+        }
+      ?>
     </tbody>
   </table>
 
