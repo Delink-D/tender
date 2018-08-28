@@ -47,13 +47,21 @@ $(document).ready(function () {
   /* validate login form */
   $("#signInForm").validate({
     rules: {
-      userName: "required",
-      password: "required"
+      userName: {
+        required: true
+      },
+      password: {
+        required: true
+      }
     },
 
     messages: {
-      userName: "User Name required",
-      password: "Password required"
+      userName: {
+        required: "User Name required"
+      },
+      password: {
+        required: "Password required"
+      }
     }
   });
 
