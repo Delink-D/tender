@@ -1,6 +1,6 @@
 <!-- connecting to the database -->
-<?php 
-  
+<?php
+
   // set values
   $host = 'localhost';
   $user = 'root';
