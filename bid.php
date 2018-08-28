@@ -1,4 +1,12 @@
-<?php  
+<?php
+  session_start();
+
+  // check if user is logged in before accessing this page
+  if (!$_SESSION['_login']) {
+    header("location: index.php?msg=login");
+    exit();
+  }
+
   include 'include/head.php';
   include 'include/modal.php';
 ?>
@@ -92,6 +100,6 @@
     </tbody>
   </table>
 
-<?php  
+<?php
   include 'include/footer.php';
 ?>
