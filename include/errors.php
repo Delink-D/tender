@@ -103,5 +103,15 @@
       </div>
     ";
   }
-?>  
+  if ($error === 'login') {
+    echo "
+      <div class='alert alert-warning' role='alert'>
+        You need to be logged in to access the biding portal!!
+        <button type='button' class='close' data-dismiss='alert' aria-label='Close'>
+          <span aria-hidden='true'>&times;</span>
+        </button>
+      </div>
+    ";
+  }
+?>
 </div>
