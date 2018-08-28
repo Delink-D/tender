@@ -13,7 +13,6 @@
     <thead>
       <tr>
         <th scope="col">#</th>
-        <th scope="col">Company</th>
         <th scope="col">Tender No</th>
         <th scope="col">Target Group</th>
         <th scope="col">Closing</th>
@@ -47,7 +46,7 @@
               case 'y':
                 $category = "Youth";
                 break;
-              
+
               case 'yw':
                 $category = "Youth & Women";
                 break;
@@ -70,11 +69,11 @@
           echo "
             <tr class='t-row' data-url=$url>
               <th scope='row'>$count</th>
-              <td>$c_name</td>
               <td>$t_num</td>
               <td>$category</td>
               <td>$t_closing</td>
               <td>Ksh. $t_security</td>
+              <td><a href='$url' class='badge badge-info'>Bid Now</a></td>
             </tr>
           ";
         }
