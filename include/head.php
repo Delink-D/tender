@@ -1,4 +1,4 @@
-<?php 
+<?php
   error_reporting(0);
   session_start();
 
@@ -29,44 +29,61 @@
       <!-- header -->
       <div id="header">
         <div class="container">
-          <div id="logo" class="col-7 float-left">
-            <a href="index.php">
-              <img src="https://e-tender.ie/_images/design/logo.png" alt="E-Tender">
-            </a>
-          </div>
 
-          <div class="col-5 float-right">
-            <div class="text-right">
-              <?php if (!$_SESSION['_login']) {?>
-              <button type="button" class="btn btn-outline-success btn-sm" data-toggle="modal" data-target="#signinModal">
-                SignUp
-              </button>
-              <button type="button" class="btn btn-outline-secondary btn-sm" data-toggle="modal" data-target="#loginModal">
-                SignIn
-              </button>
+          <nav class="navbar ">
+            <a class="navbar-brand">E-TENDER MANAGEMENT SYSTEM</a>
 
-              <?php } if ($_SESSION['_login']) {?>
-              <div class="dropdown">
-                <a class="btn dropdown-toggle" style="font-size: 22px;" href="#" role="button" id="profile" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                  <?php echo 'Welcome ' . $username; ?> <i class="material-icons" style="font-size: 22px;">account_circle</i>
-                </a>
+            <?php if (!$_SESSION['_login']) { ?>
+            <ul class="nav justify-content-end">
+              <li class="nav-item">
+                <a class="nav-link active" href="index.php">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Procurement Officer</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" data-toggle="modal" data-target="#loginModal">Supplier</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="admin">Admin</a>
+              </li>
+            </ul>
+            <?php } if ($_SESSION['_login']) { ?>
+              <ul class="nav ">
+                <li class="nav-item">
+                  <a class="nav-link active" href="index.php">Home</a>
+                </li>
+              </ul>
+            <div class="dropdown">
+              <a class="btn dropdown-toggle" style="font-size: 22px;" href="#" role="button" id="profile" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <?php echo $username; ?> <i class="material-icons" style="font-size: 22px;">account_circle</i>
+              </a>
+              <div class="dropdown-menu" aria-labelledby="profile">
+                <a class="dropdown-item" href="#">Profile</a>
 
-                <div class="dropdown-menu" aria-labelledby="profile">
-                  <a class="dropdown-item" href="#">Profile</a>
+                <?php if ($_SESSION['_user']['category'] == 'supplier') { ?>
+
                   <a class="dropdown-item" href="activebids.php">Active Bids</a>
-                  <a class="dropdown-item" href="tenderadd.php">Add Tenders</a>
                   <a class="dropdown-item" href="pastbids.php">Past Tenders</a>
-                  <div class="dropdown-divider"></div>
-                  <a class="dropdown-item" href="functions/logout.php">Sign Out</a>
-                </div>
-              </div>
-              <?php } ?>
-            </div>
-            <!-- include the error file -->
-            <?php include 'include/errors.php'; ?>
 
-            <!-- include modal file -->
-            <?php include 'include/modal.php'; ?>
-          </div>
+                <?php } if ($_SESSION['_user']['category'] === 'officer') { ?>
+
+                  <a class="dropdown-item" href="activebids.php">Companies</a>
+                  <a class="dropdown-item" href="activebids.php">Verify Bids</a>
+
+                <?php } ?>
+
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="functions/logout.php">Sign Out</a>
+              </div>
+            </div>
+            <?php } ?>
+          </nav>
+
+          <!-- include the error file -->
+          <?php include 'include/errors.php'; ?>
+
+          <!-- include modal file -->
+          <?php include 'include/modal.php'; ?>
         </div>
-      </div>      
+      </div>
