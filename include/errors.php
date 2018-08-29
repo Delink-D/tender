@@ -106,7 +106,17 @@
   if ($error === 'login') {
     echo "
       <div class='alert alert-warning' role='alert'>
-        You need to be logged in to access the biding portal!!
+        You need to be loggedIn to access ... !!
+        <button type='button' class='close' data-dismiss='alert' aria-label='Close'>
+          <span aria-hidden='true'>&times;</span>
+        </button>
+      </div>
+    ";
+  }
+  if ($error === 'sup-login') {
+    echo "
+      <div class='alert alert-warning' role='alert'>
+        You need to be loggedIn as a supplier to access the biding portal!!
         <button type='button' class='close' data-dismiss='alert' aria-label='Close'>
           <span aria-hidden='true'>&times;</span>
         </button>
