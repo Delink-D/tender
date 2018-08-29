@@ -74,6 +74,16 @@
 
           <div class="row">
             <div class="form-group col">
+              <label for="supplier">User Level</label>
+              <select name="supplier" class="form-control" id="supplier">
+                <option value="">Select User Level</option>
+                <option value="supplier">Supplier</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="form-group col">
               <label for="company">Company</label>
               <select name="company" class="form-control" id="company">
                 <option value="">Select Company</option>
