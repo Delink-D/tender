@@ -14,7 +14,7 @@ if ($_POST['login']) {
 
   if (mysqli_num_rows($query) !== 1) {
     // userId error
-    header("location: " . $server ."?msg=user");
+    header("location: ../index.php?msg=user");
   }
 
   $uRow = mysqli_fetch_assoc($query);
@@ -27,7 +27,7 @@ if ($_POST['login']) {
 
   if (mysqli_num_rows($cQuery) < 1) {
     // no comapny fetched
-    header("location: " . $server ."?msg=company");
+    header("location: ../index.php?msg=company");
   }
 
   if ($user['password'] === $pass) {
@@ -37,13 +37,13 @@ if ($_POST['login']) {
     $_SESSION['_user'] = $user;
     $_SESSION['_company'] = mysqli_fetch_assoc($cQuery);
 
-    header("location: " . $server ."?msg=suclogin");
+    header("location: ../index.php?msg=suclogin");
 
   } else {
     // password error
-    header("location: " . $server ."?msg=user");
+    header("location: ../index.php?msg=user");
   }
 
 } else {
-  header("location: " . $server ."?msg=required");
+  header("location: ../index.php?msg=required");
 }
