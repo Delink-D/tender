@@ -43,6 +43,10 @@
     <script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/additional-methods.min.js"></script>
     <script type="text/javascript">
       $("form").validate();
+
+      $(function () {
+        $('[data-toggle="popover"]').popover()
+      })
     </script>
 
     <!-- custom script -->
