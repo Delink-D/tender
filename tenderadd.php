@@ -8,13 +8,18 @@
     <h3 class="text-center">Add Tender</h3>
     <div class="row">
       <div class="form-group col">
-        <label for="t-company">Company Name</label>
-        <input type="text" name="t_company" class="form-control" value="<?php echo $_SESSION['_company']['company_name']; ?>" id="t-company" readonly>
+        <label for="user">Added By</label>
+        <input type="text" name="addedBy" class="form-control" value="<?php echo $_SESSION['_user']['username']; ?>" id="user" readonly>
       </div>
 
       <div class="form-group col">
         <label for="t-number">Tender Number</label>
-        <input type="text" name="t_number" class="form-control" placeholder="Tender Number" id="t-number">
+        <div class="input-group">
+          <div class="input-group-prepend">
+            <div class="input-group-text">TNT-</div>
+          </div>
+          <input type="text" name="t_number" class="form-control" placeholder="Tender Number" id="t-number" value"TNT-">
+        </div>
       </div>
     </div>
 
