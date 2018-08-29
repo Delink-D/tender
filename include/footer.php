@@ -12,22 +12,22 @@
             <ul class="navbar-nav">
               <li class="nav-item">
                 <a class="nav-link" href="index.php">Home</a>
-              </li> | 
+              </li> |
               <li class="nav-item">
                 <a class="nav-link" href="about.php">About Us</a>
-              </li> | 
+              </li> |
                <li class="nav-item">
                 <a class="nav-link" href="faq.php">FAQ</a>
               </li> |
                <li class="nav-item">
                 <a class="nav-link" href="terms.php">Terms of Use</a>
-              </li> | 
+              </li> |
                <li class="nav-item">
                 <a class="nav-link" href="help.php">Help</a>
-              </li> | 
+              </li> |
               <li class="nav-item">
                 <a class="nav-link" href="contact.php">Contact Us</a>
-              </li> | 
+              </li> |
             </ul>
           </div>
         </div>
