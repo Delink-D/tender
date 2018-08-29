@@ -2,13 +2,9 @@
   session_start();
 
   // check if user is logged in before accessing this page
-  if (!$_SESSION['_login']) {
-    header("location: index.php?msg=login");
-    exit();
-  }
-
-  include 'include/head.php';
-  include 'include/modal.php';
+  if ($_SESSION['_login'] && ($_SESSION['_user']['category'] === 'supplier')) {
+    include 'include/head.php';
+    include 'include/modal.php';
 ?>
 <style>
   body {
@@ -102,4 +98,9 @@
 
 <?php
   include 'include/footer.php';
+  }else {
+    // redirect to home page
+    header("location: index.php?msg=sup-login");
+    exit();
+  }
 ?>
