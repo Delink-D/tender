@@ -4,7 +4,7 @@
         <div class="container">
           <div class="col-5 float-left">
             <div>Last update: <?php echo date('D d F Y G:i a'); ?></div>
-            <div>&copy; <?php echo date('Y'); ?> e-Tenders</div>
+            <div>&copy; <?php echo date('Y'); ?> e-Tender Management System</div>
           </div>
 
           <div class="col-7 float-right text-right">
