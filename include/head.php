@@ -31,7 +31,7 @@
         <div class="container">
 
           <nav class="navbar ">
-            <a class="navbar-brand">E-TENDER MANAGEMENT SYSTEM</a>
+            <a class="navbar-brand" id="brand">E-TENDER MANAGEMENT SYSTEM</a>
 
             <?php if (!$_SESSION['_login']) { ?>
             <ul class="nav justify-content-end">

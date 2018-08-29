@@ -42,11 +42,16 @@ body {
 .container-errors {
   position: absolute;
 }
+#brand {
+  font-size: 28px;
+  color: rgb(20, 105, 136);
+  font-family: 'Teko', sans-serif;
+}
 
 /*body*/
 .body {
-  margin: 20px auto;
   min-height: 70%;
+  margin: 20px auto;
   border: 1px solid #e2e2e2;
 }
 .navbar-nav {
