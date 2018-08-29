@@ -15,7 +15,7 @@
     <title>E-Tender</title>
 
     <!-- fonts / bootstrap styles -->
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons|Teko" rel="stylesheet">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
     <!-- jquery validation -->
@@ -39,13 +39,16 @@
                 <a class="nav-link active" href="index.php">Home</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">Procurement Officer</a>
+                <a class="nav-link" data-toggle="modal" data-target="#loginModal">Procurement Officer</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" data-toggle="modal" data-target="#loginModal">Supplier</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="admin">Admin</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link"data-toggle="modal" data-target="#signupModal">Sign Up</a>
               </li>
             </ul>
             <?php } if ($_SESSION['_login']) { ?>
@@ -65,9 +68,11 @@
 
                   <a class="dropdown-item" href="activebids.php">Active Bids</a>
                   <a class="dropdown-item" href="pastbids.php">Past Tenders</a>
+                  <a class="dropdown-item" href="company.php">Company Details</a>
 
                 <?php } if ($_SESSION['_user']['category'] === 'officer') { ?>
 
+                  <a class="dropdown-item" href="tenderadd.php">Add Tender</a>
                   <a class="dropdown-item" href="activebids.php">Companies</a>
                   <a class="dropdown-item" href="activebids.php">Verify Bids</a>
 
