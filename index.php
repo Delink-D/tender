@@ -1,7 +1,5 @@
 <?php
   include 'include/head.php';
-
-  // echo $_SERVER['REQUEST_URI'];
 ?>
 <!-- body -->
 <div class="container body padding0">
@@ -17,6 +15,7 @@
         <th scope="col">Target Group</th>
         <th scope="col">Closing</th>
         <th scope="col">Security</th>
+        <th scope="col">Apply Tender</th>
       </tr>
     </thead>
     <tbody>
@@ -34,42 +33,46 @@
         $count = 0;
         while ($row = mysqli_fetch_assoc($query)) {
           $_id = $row['_id'];
-          $c_name = $row['company_name'];
           $t_num = $row['tender_number'];
           $t_cat = $row['tender_cat'];
+          $t_desc = $row['tender_desc'];
           $t_closing = $row['tender_closing'];
           $t_security = $row['tender_security'];
           $count++;
 
           // category
-            switch ($t_cat) {
-              case 'y':
-                $category = "Youth";
-                break;
+          switch ($t_cat) {
+            case 'y':
+              $category = "Youth";
+              break;
 
-              case 'yw':
-                $category = "Youth & Women";
-                break;
+            case 'yw':
+              $category = "Youth & Women";
+              break;
 
-              case 'm':
-                $category = "Minorities";
-                break;
+            case 'm':
+              $category = "Minorities";
+              break;
 
-              case 'oa':
-                $category = "Open to All";
-                break;
+            case 'oa':
+              $category = "Open to All";
+              break;
 
-              default:
-                $category = "N/A";
-                break;
-            }
+            case 'w':
+              $category = "Women";
+              break;
 
-            $url = 'bid.php?id='.$_id;
+            default:
+              $category = "N/A";
+              break;
+          }
+
+          $url = 'bid.php?id='.$_id;
 
           echo "
-            <tr class='t-row' data-url=$url>
+            <tr class='t-row'>
               <th scope='row'>$count</th>
-              <td>$t_num</td>
+              <td><span data-container='body' data-toggle='popover' title='$t_num' data-placement='bottom' data-content='$t_desc'>$t_num</span></td>
               <td>$category</td>
               <td>$t_closing</td>
               <td>Ksh. $t_security</td>
