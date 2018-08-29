@@ -26,7 +26,7 @@
 
         if (mysqli_num_rows($query) < 1) {
           echo "<tr>
-                  <th colspan='6'>There are not tenders to display!!</th>
+                  <th colspan='6' class='text-center'>There are not tenders to display!!</th>
                 </tr>";
         }
 
