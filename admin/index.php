@@ -5,7 +5,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>E-Tender | Admin</title>
+    <title>E-Tender Management System | Admin</title>
     <!-- styles -->
     <link href="https://fonts.googleapis.com/css?family=Fjalla+One" rel="stylesheet">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
@@ -16,7 +16,7 @@
     <div class="container-fluid padding-0 group">
       <div class="top-nav">
         <div class="col-5 float-left">
-          <h3 class="padding-0 margin-0 admin-heading">E-Tender </h3>
+          <h3 class="padding-0 margin-0 admin-heading">E-Tender Management System</h3>
         </div>
         <div class="col-7 float-right">
           <h3 class="padding-0 margin-0 admin-heading">WELCOME TO ADMIN PANEL </h3>
@@ -28,7 +28,7 @@
             <a class="nav-link" href="?page=dashboard">DashBoard</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="?page=addcompany">Add Company</a>
+            <a class="nav-link" href="?page=addcompany">Companies</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="?page=tenders">Tenders</a>
@@ -71,7 +71,7 @@
           ?>
         </div>
       </div>
-      
+
     </div>
   </body>
 
