@@ -1,57 +1,7 @@
-<div>
-  <h3>Add Comapy <small>Form</small></h3>
-  <form action="insert/insert.company.php" method="post" id="vld">
-    <div class="row">
-      <div class="form-group col">
-        <label>Company Reg No</label>
-        <input type="text" name="regNo" class="form-control" placeholder="Comapy Reg Number">
-      </div>
-
-      <div class="form-group col">
-        <label>KRA Pin</label>
-        <input type="text" name="kra" class="form-control" placeholder="Comapy KRA Pin">
-      </div>
-    </div>
-
-    <div class="row">
-      <div class="form-group col">
-        <label>Company Name</label>
-        <input type="text" name="cname" class="form-control" placeholder="Comapy Name">
-      </div>
-
-      <div class="form-group col">
-        <label>Company E-Mail</label>
-        <input type="text" name="cemail" class="form-control" placeholder="Comapy E-Mail">
-      </div>
-    </div>
-
-    <div class="row">
-      <div class="form-group col">
-        <label>Company Phone</label>
-        <input type="text" name="cphone" class="form-control" placeholder="Comapy Phone Number">
-      </div>
-
-      <div class="form-group col">
-         <label>Company Category</label>
-        <select name="ccategory" class="form-control">
-          <option value="y">Youth</option>
-          <option value="yw">Youth and Women</option>
-          <option value="m">Minorities</option>
-          <option value="g">General</option>
-        </select>
-      </div>
-    </div>
-
-    <div class="row">
-      <div class="col">
-        <input type="submit" name="saveCompany" value="Save Company" class="btn btn-success">
-      </div>
-    </div>
-  </form>
-</div>
+<h3>All Comapanies <small>List</small></h3>
 
 <!-- view all companies -->
-<div class="margin-top-50">
+<div>
   <table class="table table-sm table-hover">
     <thead>
       <tr>
@@ -89,7 +39,7 @@
             case 'y':
               $category = "Youth";
               break;
-            
+
             case 'yw':
               $category = "Youth & Women";
               break;
@@ -124,5 +74,5 @@
         }
       ?>
     </tbody>
-  </table>  
+  </table>
 </div>
