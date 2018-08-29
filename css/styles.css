@@ -41,6 +41,7 @@ body {
 }
 .container-errors {
   position: absolute;
+  z-index: 1;
 }
 #brand {
   font-size: 28px;
