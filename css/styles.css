@@ -48,6 +48,14 @@ body {
   color: rgb(20, 105, 136);
   font-family: 'Teko', sans-serif;
 }
+#top-nav-link {
+  cursor: pointer;
+  color: #007bff;
+}
+.nav-link:hover,
+#top-nav-link:hover {
+  color: #17a2b8;
+}
 
 /*body*/
 .body {
