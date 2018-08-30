@@ -4,7 +4,6 @@
   // check if user is logged in before accessing this page
   if ($_SESSION['_login'] && ($_SESSION['_user']['category'] === 'supplier')) {
     include 'include/head.php';
-    include 'include/modal.php';
 
     // get the tender id
     $_id = $_GET['id'];
@@ -61,8 +60,8 @@
 <div class="container tender-body padding0">
   <div id="tender-header" style="position: relative;">
     <h3>Tender No. <strong><?php echo $row['tender_number']; ?></strong></h3>
-    <button class="btn btn-sm btn-success" style="position: absolute; top: 10px; right: 10px;" data-toggle="tooltip" data-placement="bottom" title="Place Your Bid">Bid Now <span class="badge badge-light"><?php echo $row['tender_bids']; ?></span>
-</button>
+    <button class="btn btn-sm btn-success" style="position: absolute; top: 10px; right: 10px;" data-toggle="modal" data-target="#tenderBidModal">Bid Now <span class="badge badge-light"><?php echo $row['tender_bids']; ?></span>
+    </button>
   </div>
   <div class="padding-10 group" style="position: relative;">
     <div class="col-5 float-left">
@@ -95,6 +94,24 @@
     </div>
   </div>
 </div>
+
+<!-- bid on this tender modal -->
+<div class="modal fade" id="tenderBidModal" tabindex="-1" role="dialog" aria-labelledby="descModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="descModalLabel">Tender <strong><?php echo $row['tender_number']; ?></strong></h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <strong>About to Make a Bid</strong>
+      </div>
+    </div>
+  </div>
+</div>
+
 <!-- body -->
 <div class="container body padding0">
   <table class="table table-sm table-hover table-striped table-dark">
