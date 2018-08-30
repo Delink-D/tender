@@ -14,14 +14,14 @@
         <th scope="col">Tender No</th>
         <th scope="col">Target Group</th>
         <th scope="col">Closing</th>
-        <th scope="col">Security</th>
+        <th scope="col">Cost Estimate</th>
         <th scope="col">Apply Tender</th>
       </tr>
     </thead>
     <tbody>
       <?php
         // get the approved tenders
-        $sql = "SELECT * FROM tenders WHERE approved = '1' AND expired = '0'";
+        $sql = "SELECT * FROM tenders WHERE expired = '0' AND awarded = '0'";
         $query = mysqli_query($db, $sql);
 
         if (mysqli_num_rows($query) < 1) {
