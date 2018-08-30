@@ -9,6 +9,17 @@
     // get the tender id
     $_id = $_GET['id'];
 
+    // get the tender by id
+    $select = "SELECT * FROM tenders WHERE _id = '$_id'";
+    $query =  mysqli_query($db, $select);
+
+    if (mysqli_num_rows($query) !== 1) {
+      header('location: index.php');
+    }
+
+    // tender record
+    $row = mysqli_fetch_assoc($query);
+
 ?>
 <style>
   body {
