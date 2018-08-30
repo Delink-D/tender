@@ -48,51 +48,67 @@
       </tr>
     </thead>
     <tbody>
-      <tr class="bg-success">
-        <th scope="row">1</th>
-        <td>Delink Inc</td>
-        <td>DLNK/T/04-02-2018</td>
-        <td>UserName</td>
-        <td>Open to All</td>
-        <td>04-03-2018 12:00 PM</td>
-        <td>250000 Ksh</td>
-      </tr>
-      <tr class="bg-primary">
-        <th scope="row">1</th>
-        <td>Delink In</td>
-        <td>LDTD/T/04-05-2018</td>
-        <td>UserName</td>
-        <td>Open to All</td>
-        <td>04-03-2018 12:00 PM</td>
-        <td>270000 Ksh</td>
-      </tr>
-      <tr class="bg-warning">
-        <th scope="row">1</th>
-        <td>Delink Inc</td>
-        <td>DLNK/T/04-02-2018</td>
-        <td>UserName</td>
-        <td>Open to All</td>
-        <td>04-03-2018 12:00 PM</td>
-        <td>250000 Ksh</td>
-      </tr>
-      <tr>
-        <th scope="row">1</th>
-        <td>Delink In</td>
-        <td>LDTD/T/04-05-2018</td>
-        <td>UserName</td>
-        <td>Open to All</td>
-        <td>04-03-2018 12:00 PM</td>
-        <td>270000 Ksh</td>
-      </tr>
-      <tr>
-        <th scope="row">1</th>
-        <td>Delink Inc</td>
-        <td>DLNK/T/04-02-2018</td>
-        <td>UserName</td>
-        <td>Open to All</td>
-        <td>04-03-2018 12:00 PM</td>
-        <td>250000 Ksh</td>
-      </tr>
+      <?php
+      // display message is there are no biders for now
+      if (mysqli_num_rows($b_query) < 1) {
+        echo "<tr>
+                <th colspan='6' class='text-center'>You are the First Bider Yeeeeh!! :-)</th>
+              </tr>";
+      }
+
+      $count = 0;
+      while ($b_row = mysqli_fetch_assoc($b_query)) {
+        $b_tid = $b_row['tender_id'];
+        $b_date = $b_row['date'];
+        $b_amount = $b_row['bid_amount'];
+
+        $b_comp = $b_row['bid_company'];
+        $b_user = $b_row['bid_by'];
+
+        $t_cat = $row['tender_type'];
+        $count++;
+
+        // get comapny name
+        $c_select = "SELECT * FROM companies WHERE _id = '$b_comp'";
+        $c_query = mysqli_query($db, $c_select);
+        $user = mysqli_fetch_assoc($c_query);
+        $comp_name = $user['company_name'];
+
+        // get user name
+        $u_select = "SELECT * FROM users WHERE _id = '$b_user'";
+        $u_query = mysqli_query($db, $u_select);
+        $user = mysqli_fetch_assoc($u_query);
+        $user_name = $user['username'];
+
+        switch ($count) {
+          case 1:
+            $bg_color = 'bg-success';
+            break;
+
+          case 2:
+            $bg_color = 'bg-primary';
+            break;
+
+          case 3:
+            $bg_color = 'bg-warning';
+            break;
+
+          default:
+            $bg_color = '';
+            break;
+        }
+        echo "
+          <tr class='$bg_color'>
+            <th scope='row'>$count</th>
+            <td>$comp_name</td>
+            <td>$user_name</td>
+            <td>$t_cat</td>
+            <td>$b_date</td>
+            <td>Ksh. $b_amount</td>
+          </tr>
+        ";
+      }
+      ?>
     </tbody>
   </table>
 
