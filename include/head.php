@@ -39,16 +39,16 @@
                 <a class="nav-link active" href="index.php">Home</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" data-toggle="modal" data-target="#loginModal">Procurement Officer</a>
+                <a class="nav-link" id="top-nav-link" data-toggle="modal" data-target="#loginModal">Procurement Officer</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" data-toggle="modal" data-target="#loginModal">Supplier</a>
+                <a class="nav-link" id="top-nav-link" data-toggle="modal" data-target="#loginModal">Supplier</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="admin">Admin</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link"data-toggle="modal" data-target="#signupModal">Sign Up</a>
+                <a class="nav-link" id="top-nav-link" data-toggle="modal" data-target="#signupModal">Sign Up</a>
               </li>
             </ul>
             <?php } if ($_SESSION['_login']) { ?>
