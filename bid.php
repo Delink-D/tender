@@ -47,6 +47,10 @@
         break;
     }
 
+    // get tenders biders
+    $b_id = $row['_id'];
+    $b_select = "SELECT * FROM bids WHERE tender_id = '$b_id' ORDER BY bid_amount ASC";
+    $b_query =  mysqli_query($db, $b_select);
 ?>
 <style>
   body {
