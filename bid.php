@@ -44,8 +44,7 @@
       </tr>
       <tr>
         <th scope="col">#</th>
-        <th scope="col">Company</th>
-        <th scope="col">Bidding Comp</th>
+        <th scope="col">Bidding Company</th>
         <th scope="col">Bid By</th>
         <th scope="col">Company Category</th>
         <th scope="col">Bid Date</th>
