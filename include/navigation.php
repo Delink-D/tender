@@ -3,13 +3,13 @@
   <ul class="navbar-nav">
     <li class="nav-item">
       <a class="nav-link" href="index.php">Active Tenders</a>
-    </li> | 
+    </li> |
     <li class="nav-item">
       <a class="nav-link" href="pasttenders.php">Past Tenders</a>
-    </li> | 
-    <li class="nav-item">
+    </li> |
+    <!-- <li class="nav-item">
       <a class="nav-link" href="expiredtenders.php">Expired Tenders</a>
-    </li> | 
+    </li> |  -->
   </ul>
 
   <form class="form-inline">
