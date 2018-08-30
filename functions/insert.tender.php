@@ -23,9 +23,13 @@ if ($_POST['insertTender']) {
 		header('location: ../tenderadd.php?msg=exist');
 	}
 
+	$t_awarded = '';
+	$t_bids = 0;
+	$bid_amount = 0;
+
 	// save tender
-	$sql = "INSERT INTO tenders (tender_number, tender_cat, tender_type, tender_security, tender_closing, tender_desc, added_by)
-			VALUES('$t_number','$t_category','$t_type','$t_security','$t_closing','$t_desc','$added_by')";
+	$sql = "INSERT INTO tenders (tender_number, tender_cat, tender_type, tender_security, tender_closing, tender_desc, tender_bids, tender_awarded, bid_amount, added_by)
+			VALUES('$t_number','$t_category','$t_type','$t_security','$t_closing','$t_desc','$t_bids','$t_awarded','$bid_amount','$added_by')";
 	$query = mysqli_query($db, $sql);
 
 	if ($query) {
