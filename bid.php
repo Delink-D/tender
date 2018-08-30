@@ -50,6 +50,13 @@
     $b_id = $row['_id'];
     $b_select = "SELECT * FROM bids WHERE tender_id = '$b_id' ORDER BY bid_amount ASC";
     $b_query =  mysqli_query($db, $b_select);
+
+    // get user company
+    $c_id = $_SESSION['_user']['company'];
+    $uc_select = "SELECT * FROM companies WHERE _id = '$c_id'";
+    $uc_query =  mysqli_query($db, $uc_select);
+    $uc_row = mysqli_fetch_assoc($uc_query);
+
 ?>
 <style>
   body {
