@@ -77,6 +77,24 @@
   </div>
 </div>
 
+<!-- tender details -->
+<div class="modal fade" id="tenderDescModal" tabindex="-1" role="dialog" aria-labelledby="descModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="descModalLabel">Tender <strong><?php echo $row['tender_number']; ?></strong></h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <p>
+        <?php echo $row['tender_desc']; ?>
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
 <!-- body -->
 <div class="container body padding0">
   <table class="table table-sm table-hover table-striped table-dark">
