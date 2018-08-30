@@ -5,6 +5,10 @@
   if ($_SESSION['_login'] && ($_SESSION['_user']['category'] === 'supplier')) {
     include 'include/head.php';
     include 'include/modal.php';
+
+    // get the tender id
+    $_id = $_GET['id'];
+
 ?>
 <style>
   body {
