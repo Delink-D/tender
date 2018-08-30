@@ -114,6 +114,42 @@
       </div>
       <div class="modal-body">
         <strong>About to Make a Bid</strong>
+
+        <form action="functions/bid.php" method="post">
+          <div class="form-group col">
+            <input type="hidden" name="tender" class="form-control" value="<?php echo $row['_id']; ?>">
+            <input type="hidden" name="bid_comp" class="form-control" value="<?php echo $uc_row['_id']; ?>">
+          </div>
+
+          <div class="row">
+            <div class="form-group col">
+              <label for="comp_n">Biding Company</label>
+              <input type="text" name="bid_comp_n" class="form-control" value="<?php echo $uc_row['company_name']; ?>" id="comp_n" readonly>
+            </div>
+
+            <div class="form-group col">
+              <label for="user">Biding User</label>
+              <input type="text" name="bid_user" class="form-control" value="<?php echo $_SESSION['_user']['username']; ?>" id="user" readonly>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="form-group col">
+              <label for="kra">Company KRA-PIN</label>
+              <input type="text" name="kra" class="form-control" placeholder="KRA PIN" id="kra">
+            </div>
+
+            <div class="form-group col">
+              <label for="amount">Biding Amount</label>
+              <input type="text" name="amount" class="form-control" placeholder="Biding Amount" id="amount">
+            </div>
+          </div>
+
+          <div class="form-group">
+            <input type="submit" name="bid" class="btn btn-primary w-50" value="Bid Now">
+          </div>
+
+        </form>
       </div>
     </div>
   </div>
