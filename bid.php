@@ -20,6 +20,33 @@
     // tender record
     $row = mysqli_fetch_assoc($query);
 
+    // tender category
+    switch ($row['tender_cat']) {
+      case 'y':
+        $category = "Youth";
+        break;
+
+      case 'yw':
+        $category = "Youth & Women";
+        break;
+
+      case 'm':
+        $category = "Minorities";
+        break;
+
+      case 'oa':
+        $category = "Open to All";
+        break;
+
+      case 'w':
+        $category = "Women";
+        break;
+
+      default:
+        $category = "N/A";
+        break;
+    }
+
 ?>
 <style>
   body {
