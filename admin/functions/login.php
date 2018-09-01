@@ -25,7 +25,7 @@ if ($_POST['adminlogin']) {
     $_SESSION['_loginA'] = true;
     $_SESSION['_user'] = $user;
 
-    header("location: ../index.php");
+    header("location: ../index.php?page=dashboard");
 
   } else {
     // password error
