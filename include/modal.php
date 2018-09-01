@@ -76,9 +76,8 @@
 
           <div class="row">
             <div class="form-group col">
-              <label for="supplier">User Level</label>
-              <select name="supplier" class="form-control" id="supplier">
-                <option value="">Select User Level</option>
+              <label for="level">User Level</label>
+              <select name="level" class="form-control" id="level">
                 <option value="supplier">Supplier</option>
               </select>
             </div>
@@ -86,36 +85,13 @@
 
           <div class="row">
             <div class="form-group col">
-              <label for="company">Company</label>
-              <select name="company" class="form-control" id="company">
-                <option value="">Select Company</option>
-                <?php
-                  $sql = "SELECT * FROM companies";
-                  $query = mysqli_query($db, $sql);
-
-                  if (mysqli_num_rows($query) < 1) {
-                    echo "<option value=''>NO COMPANIES YET!!</option>";
-                  }
-
-                  while ($row = mysqli_fetch_assoc($query)) {
-                    $company_id = $row['_id'];
-                    $company_name = $row['company_name'];
-                    echo "<option value='$company_id'>$company_name</option>";
-                  }
-                ?>
-              </select>
-            </div>
-          </div>
-
-          <div class="row">
-            <div class="form-group col">
               <label for="up-password">Password</label>
-              <input type="text" name="password" class="form-control" placeholder="Password" id="up-password">
+              <input type="password" name="password" class="form-control" placeholder="Password" id="up-password">
             </div>
 
             <div class="form-group col">
               <label for="up-re-password">Re-Enter Password</label>
-              <input type="text" name="passwordReEnter" class="form-control" placeholder="Re-Enter Password" id="up-re-password">
+              <input type="password" name="passwordReEnter" class="form-control" placeholder="Re-Enter Password" id="up-re-password">
             </div>
           </div>
 
