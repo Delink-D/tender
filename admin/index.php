@@ -9,6 +9,7 @@
   }
 
   include 'includes/head.php';
+  include '../include/modal.php';
 ?>
 
 <div class="container-fluid padding-0 group">
@@ -67,8 +68,6 @@
         }
         if ($page === 'officer') {
           include 'procurement.php';
-        }else {
-          include 'dashboard.php';
         }
       ?>
     </div>
