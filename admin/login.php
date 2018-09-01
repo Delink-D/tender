@@ -1,4 +1,9 @@
-<form action="functions/login.php" method="post" id="signInForm">
+<?php
+  include 'includes/head.php';
+?>
+
+<form action="functions/login.php" method="post" class="form-login">
+  <h4 class="text-center">E-Tender Admin Login</h4>
   <div class="form-group">
     <label for="username">User Name</label>
     <input type="text" name="username" class="form-control" placeholder="User Name" id="username">
@@ -17,7 +22,11 @@
     $msg = $_GET['msg'];
 
     if ($msg === 'user') {
-      echo '<p>Username or Passsword Is incorrect pls try again!</p>';
+      echo "<p class='text-danger'>Username or Passsword Is incorrect pls try again!</p>";
     }
   ?>
 </form>
+
+<?php
+  include 'includes/footer.php';
+?>
