@@ -1,6 +1,14 @@
 <?php
   error_reporting(0);
+  session_start();
   include '../env/db.php';
+
+  $user = $_SESSION['_user'];
+  if ($user['category'] !== 'admin') {
+    // redirect to login page
+    header('location: login.php');
+  }
+
 ?>
 <!DOCTYPE html>
 <html>
