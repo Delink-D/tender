@@ -76,7 +76,7 @@
               <td>$category</td>
               <td>$t_closing</td>
               <td>Ksh. $t_security</td>
-              <td><a href='$url' class='badge badge-info'>Bid Now</a></td>
+              <td><a href='$url' class='badge badge-info'>Apply Now</a></td>
             </tr>
           ";
         }
