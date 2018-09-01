@@ -64,6 +64,7 @@
             include '../include/errors.php';
 
             $page = $_GET['page'];
+        <a class="nav-link disabled" href="functions/logout.php">SignOut</a>
 
             if ($page === 'dashboard') {
               include 'dashboard.php';
