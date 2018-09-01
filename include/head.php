@@ -47,9 +47,6 @@
               <li class="nav-item">
                 <a class="nav-link" href="admin">Admin</a>
               </li>
-              <li class="nav-item">
-                <a class="nav-link" id="top-nav-link" data-toggle="modal" data-target="#signupModal">Sign Up</a>
-              </li>
             </ul>
             <?php } if ($_SESSION['_login']) { ?>
               <ul class="nav ">
