@@ -25,9 +25,12 @@ body {
 .form-login {
   width: 30%;
   padding: 20px;
-  margin: 7% auto;
+  margin: 5% auto;
   background: #fff;
   border: 1px solid #dcdcdc;
+}
+#back-home {
+  padding: 5px;
 }
 
 /*Admin panel styles*/

@@ -2,6 +2,8 @@
   include 'includes/head.php';
 ?>
 
+<a href="../" id="back-home">Back to front site</a>
+
 <form action="functions/login.php" method="post" class="form-login">
   <h4 class="text-center">E-Tender Admin Login</h4>
   <div class="form-group">
