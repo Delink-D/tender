@@ -39,7 +39,7 @@
         <a class="nav-link" href="#">Bids</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="/admin/add-admin">Add Procurement Officer</a>
+        <a class="nav-link" href="?page=officer">Add Procurement Officer</a>
       </li>
       <li class="nav-item">
         <a class="nav-link disabled" href="functions/logout.php">SignOut</a>
@@ -64,6 +64,9 @@
         }
         if ($page === 'tenders') {
           include 'tenders.php';
+        }
+        if ($page === 'officer') {
+          include 'procurement.php';
         }else {
           include 'dashboard.php';
         }
