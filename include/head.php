@@ -38,12 +38,14 @@
               <li class="nav-item">
                 <a class="nav-link active" href="index.php">Home</a>
               </li>
+              <?php if (!$_SESSION['_loginA']) { ?> <!-- display the login if not an admin session -->
               <li class="nav-item">
                 <a class="nav-link" id="top-nav-link" data-toggle="modal" data-target="#loginModal">Procurement Officer</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" id="top-nav-link" data-toggle="modal" data-target="#loginModal">Supplier</a>
               </li>
+              <?php } ?>
               <li class="nav-item">
                 <a class="nav-link" href="admin">Admin</a>
               </li>
