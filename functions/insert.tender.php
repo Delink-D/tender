@@ -12,8 +12,6 @@ $t_security = $_POST['t_security'];
 $t_closing = $_POST['t_closing'];
 $t_desc = $_POST['t_desc'];
 
-// $added_by = $_SESSION['_user']['username'];
-
 if ($_POST['insertTender']) {
 	// check if tender exist
 	$cSql = "SELECT * FROM tenders WHERE tender_number = '$t_number'";

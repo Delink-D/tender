@@ -4,7 +4,7 @@
 
 <!-- body -->
 <div class="container body padding0">
-  <form action="insert/insert.company.php" method="post" id="vld" class="margin-20">
+  <form action="functions/insert.company.php" method="post" id="vld" class="margin-20">
     <h3 class="text-center">Add Your Company Details</h3>
     <div class="row">
       <div class="form-group col">
