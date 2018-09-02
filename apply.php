@@ -51,7 +51,7 @@
 <div class="container tender-body padding0">
   <div id="tender-header" style="position: relative;">
     <h3>Tender No. <strong><?php echo $row['tender_number']; ?></strong></h3>
-    <button class="btn btn-sm btn-success" style="position: absolute; top: 10px; right: 10px;" data-toggle="modal" data-target="#tenderBidModal">Apply Now</button>
+    <button class="btn btn-sm btn-success" style="position: absolute; top: 10px; right: 10px;" data-toggle="modal" data-target="#applyModal">Apply Now</button>
   </div>
   <div class="padding-10 group" style="position: relative;">
     <div class="col-5 float-left">
@@ -61,6 +61,25 @@
     <div class="col-5 float-right">
       <p class="c-text-bold tender-text-detail">Tender Closing Day: <span class="text-danger"><?php echo $row['tender_closing']; ?></span></p>
       <p class="c-text-bold tender-text-detail">Tender Security: <?php echo $row['tender_security']; ?></p>
+    </div>
+  </div>
+</div>
+
+<!-- // apply for tenders modal form -->
+<div class="modal fade" id="applyModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Apply tender E-Tender System</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form action="functions/login.php" method="post" id="signInForm">
+          Apply for a tender!! Comming soon :)
+        </form>
+      </div>
     </div>
   </div>
 </div>
