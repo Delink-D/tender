@@ -31,6 +31,37 @@
   </div>
 </div>
 
+<!-- Login Modal Officer -->
+<div class="modal fade" id="loginModalOfficer" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel"> Procurement Officer SignIn </h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form action="functions/login.php" method="post" id="signInForm">
+          <div class="form-group">
+            <label for="username">User Name</label>
+            <input type="text" name="userName" class="form-control" placeholder="User Name" id="username">
+          </div>
+
+          <div class="form-group">
+            <label for="password">Password</label>
+            <input type="password" name="password" class="form-control" placeholder="Password" id="password">
+          </div>
+
+          <div class="form-group">
+            <input type="submit" name="login" class="btn btn-primary" value="SignIn">
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
 <!-- SignUp Modal -->
 <div class="modal fade" id="signupModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
