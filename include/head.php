@@ -40,7 +40,7 @@
               </li>
               <?php if (!$_SESSION['_loginA']) { ?> <!-- display the login if not an admin session -->
               <li class="nav-item">
-                <a class="nav-link" id="top-nav-link" data-toggle="modal" data-target="#loginModal">Procurement Officer</a>
+                <a class="nav-link" id="top-nav-link" data-toggle="modal" data-target="#loginModalOfficer">Procurement Officer</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" id="top-nav-link" data-toggle="modal" data-target="#loginModal">Supplier</a>
