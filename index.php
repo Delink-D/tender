@@ -67,7 +67,18 @@
               break;
           }
 
-          $url = 'bid.php?id='.$_id;
+          // get applications to tenders
+          $u_company = $_SESSION['_user']['company'];
+          $sql_c = "SELECT * FROM tenders_applications WHERE tender = '$_id' AND company = '$u_company'";
+          $query_c = mysqli_query($db, $sql_c);
+
+          if (mysqli_num_rows($query_c) > 0) {
+            $url = 'bid.php?id='.$_id; // url to biding page
+            $btn = "<a href='$url' class='badge badge-info'>Bid Now</a>";
+          } else {
+              $url = 'apply.php?id='.$_id; // url to biding page
+              $btn = "<a href='$url' class='badge badge-info'>Apply Now</a>";
+          }
 
           echo "
             <tr class='t-row'>
@@ -76,7 +87,7 @@
               <td>$category</td>
               <td>$t_closing</td>
               <td>Ksh. $t_security</td>
-              <td><a href='$url' class='badge badge-info'>Apply Now</a></td>
+              <td>$btn</td>
             </tr>
           ";
         }
