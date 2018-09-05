@@ -80,6 +80,12 @@
               $btn = "<a href='$url' class='badge badge-info'>Apply Now</a>";
           }
 
+          // check if user is an official
+          if ($_SESSION['_user']['level'] === 'officer') {
+            $url = 'bid.php?id='.$_id; // url to biding page
+            $btn = "<a href='$url' class='badge badge-info'>All Bids</a>";
+          }
+
           echo "
             <tr class='t-row'>
               <th scope='row'>$count</th>
