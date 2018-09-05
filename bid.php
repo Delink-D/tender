@@ -59,7 +59,7 @@
 
     // if user is an official
     if ($_SESSION['_user']['level'] === 'officer') {
-      $disable = true;
+      $disable = 'disabled';
     } else {
       $disable = '';
     }
@@ -74,7 +74,7 @@
 <div class="container tender-body padding0">
   <div id="tender-header" style="position: relative;">
     <h3>Tender No. <strong><?php echo $row['tender_number']; ?></strong></h3>
-    <button disabled="<?php echo $disable; ?>" class="btn btn-sm btn-success" style="position: absolute; top: 10px; right: 10px;" data-toggle="modal" data-target="#tenderBidModal">Bid Now <span class="badge badge-light"><?php echo $row['tender_bids']; ?></span>
+    <button <?php echo $disable; ?> class="btn btn-sm btn-success" style="position: absolute; top: 10px; right: 10px;" data-toggle="modal" data-target="#tenderBidModal">Bid Now <span class="badge badge-light"><?php echo $row['tender_bids']; ?></span>
     </button>
   </div>
   <div class="padding-10 group" style="position: relative;">
