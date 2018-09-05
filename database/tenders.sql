@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Sep 02, 2018 at 09:05 PM
+-- Generation Time: Sep 06, 2018 at 12:54 AM
 -- Server version: 10.1.30-MariaDB
 -- PHP Version: 7.2.1
 
@@ -49,30 +49,36 @@ INSERT INTO `bids` (`_id`, `tender_id`, `bid_company`, `bid_kra`, `bid_amount`, 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `companies`
+-- Table structure for table `suppliers`
 --
 
-CREATE TABLE `companies` (
+CREATE TABLE `suppliers` (
   `_id` int(11) NOT NULL,
   `company_reg` varchar(100) NOT NULL,
   `company_pin` varchar(100) NOT NULL,
   `company_name` varchar(100) NOT NULL,
-  `comany_phone` varchar(100) NOT NULL,
+  `company_phone` varchar(100) NOT NULL,
   `company_email` varchar(100) NOT NULL,
   `company_cat` varchar(50) NOT NULL,
+  `supplier_id` varchar(50) NOT NULL,
+  `level` varchar(50) NOT NULL,
+  `password` varchar(100) NOT NULL,
   `dateadded` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `companies`
+-- Dumping data for table `suppliers`
 --
 
-INSERT INTO `companies` (`_id`, `company_reg`, `company_pin`, `company_name`, `comany_phone`, `company_email`, `company_cat`, `dateadded`) VALUES
-(1, 'GHHYWUW2016', 'A00B24356', 'Delink Creations', '0723456790', 'delinkdesigns@gmail.com', 'y', '2018-02-16 19:08:55'),
-(2, 'HTOPM/2015', 'A8766B5F99', 'Ngich Inc', '079876543', 'info@ngich.org', 'yw', '2018-02-17 18:35:38'),
-(3, 'XCPM/2016', 'P0895678YU', 'Hen Enterprises', '079877553', 'info@hen.org', 'y', '2018-02-17 18:35:38'),
-(4, 'DFXCT-2014/2334', 'A0056778Y', 'Dento Int', '0789654321', 'info@dento.com', 'g', '2018-09-01 23:23:08'),
-(5, 'DFXCT-2013/879890', 'A0045167PO', 'Pizza Out', '0722345678', 'order@pizzaout.com', 'g', '2018-09-01 23:33:04');
+INSERT INTO `suppliers` (`_id`, `company_reg`, `company_pin`, `company_name`, `company_phone`, `company_email`, `company_cat`, `supplier_id`, `level`, `password`, `dateadded`) VALUES
+(1, 'GHHYWUW2016', 'A00B24356', 'Delink Creations', '0723456790', 'delinkdesigns@gmail.com', 'y', '', '', '', '2018-02-16 19:08:55'),
+(2, 'HTOPM/2015', 'A8766B5F99', 'Ngich Inc', '079876543', 'info@ngich.org', 'yw', '', '', '', '2018-02-17 18:35:38'),
+(3, 'XCPM/2016', 'P0895678YU', 'Hen Enterprises', '079877553', 'info@hen.org', 'y', '', '', '', '2018-02-17 18:35:38'),
+(4, 'DFXCT-2014/2334', 'A0056778Y', 'Dento Int', '0789654321', 'info@dento.com', 'g', '', '', '', '2018-09-01 23:23:08'),
+(5, 'DFXCT-2013/879890', 'A0045167PO', 'Pizza Out', '0722345678', 'order@pizzaout.com', 'g', '', '', '', '2018-09-01 23:33:04'),
+(6, 'sghsjl', 'A5467890', 'DO', '45678978', 'do@info.com', '', 'fdfgjk', 'supplier', 'do4321', '2018-09-05 22:03:52'),
+(7, 'SD/34567-100', 'A08765AS', 'TZXC', '56678990', 'info@tzxc.com', 'm', 'DFG-1001', 'supplier', 'tz3210', '2018-09-05 22:05:48'),
+(8, 'SD/34567-100', 'A08765AS', 'TZXCc', '56678990', 'info@tzxc.com', 'm', 'DFG-100', 'supplier', 'df0321', '2018-09-05 22:06:54');
 
 -- --------------------------------------------------------
 
@@ -115,19 +121,23 @@ INSERT INTO `tenders` (`_id`, `tender_number`, `tender_cat`, `tender_type`, `ten
 
 CREATE TABLE `tenders_applications` (
   `_id` int(11) NOT NULL,
-  `tender` int(11) NOT NULL,
   `company` int(11) NOT NULL,
-  `kra` varchar(11) NOT NULL,
-  `applyby` int(11) NOT NULL,
-  `dateadded` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
+  `compliance_cert` blob NOT NULL,
+  `kra_cert` blob NOT NULL,
+  `company_cert` blob NOT NULL,
+  `tender` int(11) NOT NULL,
+  `approved` tinyint(4) NOT NULL,
+  `message` text NOT NULL,
+  `added` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `tenders_applications`
 --
 
-INSERT INTO `tenders_applications` (`_id`, `tender`, `company`, `kra`, `applyby`, `dateadded`) VALUES
-(1, 1, 5, 'A0045167PO', 4, '2018-09-02 00:02:24');
+INSERT INTO `tenders_applications` (`_id`, `company`, `compliance_cert`, `kra_cert`, `company_cert`, `tender`, `approved`, `message`, `added`) VALUES
+(1, 1, 0x2f6f70742f6c616d70702f74656d702f7068704835364b4c64, 0x2f6f70742f6c616d70702f74656d702f706870395339566751, 0x2f6f70742f6c616d70702f74656d702f7068707635576c4d73, 3, 1, 'Hay there', '2018-09-05 19:29:52'),
+(5, 0, 0x2f6f70742f6c616d70702f74656d702f706870785a584e6750, 0x2f6f70742f6c616d70702f74656d702f706870524534666174, 0x2f6f70742f6c616d70702f74656d702f706870656d48323336, 1, 0, '', '2018-09-05 22:46:24');
 
 -- --------------------------------------------------------
 
@@ -140,10 +150,9 @@ CREATE TABLE `users` (
   `firstname` varchar(100) NOT NULL,
   `lastname` varchar(100) NOT NULL,
   `username` varchar(100) NOT NULL,
-  `category` varchar(50) NOT NULL,
+  `level` varchar(50) NOT NULL,
   `email` varchar(100) NOT NULL,
   `nationalId` varchar(10) NOT NULL,
-  `company` int(11) DEFAULT NULL,
   `password` varchar(1000) NOT NULL,
   `dateadded` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
@@ -152,12 +161,12 @@ CREATE TABLE `users` (
 -- Dumping data for table `users`
 --
 
-INSERT INTO `users` (`_id`, `firstname`, `lastname`, `username`, `category`, `email`, `nationalId`, `company`, `password`, `dateadded`) VALUES
-(1, 'Admin', 'Admin', 'Admin', 'admin', 'admin@me.com', '3456789', NULL, 'admin321', '2018-02-16 18:14:19'),
-(3, 'Officer', 'Officer', 'Officer', 'officer', 'officer@gmail.com', '3687346', NULL, 'officer', '2018-02-17 17:23:11'),
-(4, 'Supplier', 'Supplier', 'Supplier', 'supplier', 'supplier@gmail.com', '6783423', 5, 'supplier', '2018-02-17 17:23:11'),
-(5, 'User', 'User', 'user', 'supplier', 'user@gmail.com', '556778', NULL, 'user321', '2018-09-01 20:40:42'),
-(6, 'Officer', 'Officer', 'officer1', 'officer', 'officer1@gmail.com', '6678890', NULL, 'officer', '2018-09-01 22:25:42');
+INSERT INTO `users` (`_id`, `firstname`, `lastname`, `username`, `level`, `email`, `nationalId`, `password`, `dateadded`) VALUES
+(1, 'Admin', 'Admin', 'Admin', 'admin', 'admin@me.com', '3456789', 'admin321', '2018-02-16 18:14:19'),
+(3, 'Officer', 'Officer', 'Officer', 'officer', 'officer@gmail.com', '3687346', 'officer', '2018-02-17 17:23:11'),
+(4, 'Supplier', 'Supplier', 'Supplier', 'supplier', 'supplier@gmail.com', '6783423', 'supplier', '2018-02-17 17:23:11'),
+(5, 'User', 'User', 'user', 'supplier', 'user@gmail.com', '556778', 'user321', '2018-09-01 20:40:42'),
+(6, 'Officer', 'Officer', 'officer1', 'officer', 'officer1@gmail.com', '6678890', 'officer', '2018-09-01 22:25:42');
 
 --
 -- Indexes for dumped tables
@@ -173,9 +182,9 @@ ALTER TABLE `bids`
   ADD KEY `company` (`bid_company`) USING BTREE;
 
 --
--- Indexes for table `companies`
+-- Indexes for table `suppliers`
 --
-ALTER TABLE `companies`
+ALTER TABLE `suppliers`
   ADD PRIMARY KEY (`_id`);
 
 --
@@ -191,7 +200,6 @@ ALTER TABLE `tenders`
 --
 ALTER TABLE `tenders_applications`
   ADD PRIMARY KEY (`_id`),
-  ADD KEY `user` (`applyby`),
   ADD KEY `company` (`company`),
   ADD KEY `tender` (`tender`);
 
@@ -200,8 +208,7 @@ ALTER TABLE `tenders_applications`
 --
 ALTER TABLE `users`
   ADD PRIMARY KEY (`_id`),
-  ADD UNIQUE KEY `NATID` (`nationalId`),
-  ADD KEY `COMPANY` (`company`);
+  ADD UNIQUE KEY `NATID` (`nationalId`);
 
 --
 -- AUTO_INCREMENT for dumped tables
@@ -214,10 +221,10 @@ ALTER TABLE `bids`
   MODIFY `_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
--- AUTO_INCREMENT for table `companies`
+-- AUTO_INCREMENT for table `suppliers`
 --
-ALTER TABLE `companies`
-  MODIFY `_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+ALTER TABLE `suppliers`
+  MODIFY `_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT for table `tenders`
@@ -229,7 +236,7 @@ ALTER TABLE `tenders`
 -- AUTO_INCREMENT for table `tenders_applications`
 --
 ALTER TABLE `tenders_applications`
-  MODIFY `_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `users`
