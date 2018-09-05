@@ -41,7 +41,7 @@
           $t_compcert = $row['company_cert'];
 
           // get company
-          $comp = mysqli_query($db, "SELECT * FROM companies WHERE _id='$c_id'");
+          $comp = mysqli_query($db, "SELECT * FROM suppliers WHERE _id='$c_id'");
           $company = mysqli_fetch_assoc($comp);
 
           $c_name = $company['company_name'];
