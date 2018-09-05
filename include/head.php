@@ -72,6 +72,7 @@
                 <?php } if ($_SESSION['_user']['category'] === 'officer') { ?>
 
                   <a class="dropdown-item" href="tenderadd.php">Add Tender</a>
+                  <a class="dropdown-item" href="tenderverify.php">Verify Applications</a>
                   <a class="dropdown-item" href="activebids.php">Companies</a>
                   <a class="dropdown-item" href="activebids.php">Verify Bids</a>
 
