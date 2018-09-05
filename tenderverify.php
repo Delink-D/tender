@@ -102,9 +102,9 @@
               <td>$category</td>
               <td>$t_closing</td>
               <td>$c_name</td>
-              <td>$t_krapin</td>
-              <td>$t_cpmpliance</td>
-              <td>$t_compcert</td>
+              <td><a href='#'>View Pin</a></td>
+              <td><a href='#'>View Compliance</a></td>
+              <td><a href='#'>View Company Cert</a></td>
               <td>$btn</td>
             </tr>
           ";
