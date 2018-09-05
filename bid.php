@@ -2,7 +2,7 @@
   session_start();
 
   // check if user is logged in before accessing this page
-  if ($_SESSION['_login'] && ($_SESSION['_user']['category'] === 'supplier')) {
+  if ($_SESSION['_login'] && ($_SESSION['_user']['level'] === 'supplier') || $_SESSION['_login'] && ($_SESSION['_user']['level'] === 'officer')) {
     include 'include/head.php';
 
     // get the tender id
@@ -52,10 +52,17 @@
     $b_query =  mysqli_query($db, $b_select);
 
     // get user company
-    $c_id = $_SESSION['_user']['company'];
-    $uc_select = "SELECT * FROM companies WHERE _id = '$c_id'";
+    $c_id = $_SESSION['_user']['_id'];
+    $uc_select = "SELECT * FROM suppliers WHERE _id = '$c_id'";
     $uc_query =  mysqli_query($db, $uc_select);
     $uc_row = mysqli_fetch_assoc($uc_query);
+
+    // if user is an official
+    if ($_SESSION['_user']['level'] === 'officer') {
+      $disable = true;
+    } else {
+      $disable = '';
+    }
 
 ?>
 <style>
@@ -67,7 +74,7 @@
 <div class="container tender-body padding0">
   <div id="tender-header" style="position: relative;">
     <h3>Tender No. <strong><?php echo $row['tender_number']; ?></strong></h3>
-    <button class="btn btn-sm btn-success" style="position: absolute; top: 10px; right: 10px;" data-toggle="modal" data-target="#tenderBidModal">Bid Now <span class="badge badge-light"><?php echo $row['tender_bids']; ?></span>
+    <button disabled="<?php echo $disable; ?>" class="btn btn-sm btn-success" style="position: absolute; top: 10px; right: 10px;" data-toggle="modal" data-target="#tenderBidModal">Bid Now <span class="badge badge-light"><?php echo $row['tender_bids']; ?></span>
     </button>
   </div>
   <div class="padding-10 group" style="position: relative;">
@@ -193,7 +200,7 @@
         $count++;
 
         // get comapny name
-        $c_select = "SELECT * FROM companies WHERE _id = '$b_comp'";
+        $c_select = "SELECT * FROM suppliers WHERE _id = '$b_comp'";
         $c_query = mysqli_query($db, $c_select);
         $user = mysqli_fetch_assoc($c_query);
         $comp_name = $user['company_name'];
