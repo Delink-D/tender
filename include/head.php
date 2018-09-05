@@ -5,7 +5,7 @@
   include 'env/db.php';
 
   if ($_SESSION['_login']) {
-    $username = $_SESSION['_user']['username'];
+    $username = $_SESSION['_user']['company_name'];
   }
 ?>
 <!DOCTYPE html>
@@ -63,7 +63,7 @@
               <div class="dropdown-menu" aria-labelledby="profile">
                 <a class="dropdown-item" href="#">Profile</a>
 
-                <?php if ($_SESSION['_user']['category'] == 'supplier') { ?>
+                <?php if ($_SESSION['_user']['level'] == 'supplier') { ?>
 
                   <a class="dropdown-item" href="activebids.php">Active Bids</a>
                   <a class="dropdown-item" href="pastbids.php">Past Tenders</a>
