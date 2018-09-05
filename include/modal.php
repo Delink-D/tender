@@ -76,8 +76,8 @@
         <form action="functions/signup.php" method="post" id="signUpForm">
           <div class="row">
             <div class="form-group col">
-              <label for="up-username">User Name</label>
-              <input type="text" name="userName" class="form-control" placeholder="User Name" id="up-username">
+              <label for="up-cname">Company Name</label>
+              <input type="text" name="cName" class="form-control" placeholder="Company Name" id="up-cname">
             </div>
 
             <div class="form-group col">
@@ -88,26 +88,43 @@
 
           <div class="row">
             <div class="form-group col">
-              <label for="fname">First Name</label>
-              <input type="text" name="firstName" class="form-control" placeholder="First Name" id="fname">
+              <label for="phone">Phone</label>
+              <input type="number" name="phone" class="form-control" placeholder="Company Phone" id="phone">
             </div>
 
             <div class="form-group col">
-              <label for="lname">Last Name</label>
-              <input type="text" name="lastName" class="form-control" placeholder="Last Name" id="lname">
+              <label>Company Category</label>
+              <select name="cat" class="form-control">
+                <option value="">Select Company Category</option>
+                <option value="y">Youth</option>
+                <option value="yw">Youth and Women</option>
+                <option value="m">Minorities</option>
+                <option value="g">General</option>
+              </select>
+            </div>
+          </div>
+
+
+          <div class="row">
+            <div class="form-group col">
+              <label for="kra">KRA Pin</label>
+              <input type="text" name="kra" class="form-control" placeholder="KRA Pin" id="kra">
+            </div>
+
+            <div class="form-group col">
+              <label for="reg">Company Reg Cert</label>
+              <input type="text" name="reg" class="form-control" placeholder="Company Registration Certificate" id="reg">
             </div>
           </div>
 
           <div class="row">
             <div class="form-group col">
-              <label for="natid">National Id</label>
-              <input type="text" name="natId" class="form-control" placeholder="National Id" id="natid">
+              <label for="up-supid">Supplier Id</label>
+              <input type="text" name="sup_id" class="form-control" placeholder="Supplier Id" id="up-supid">
             </div>
-          </div>
 
-          <div class="row">
             <div class="form-group col">
-              <label for="level">User Level</label>
+              <label for="level">Level</label>
               <select name="level" class="form-control" id="level">
                 <option value="supplier">Supplier</option>
               </select>
@@ -127,7 +144,7 @@
           </div>
 
           <div class="form-group">
-            <input type="submit" name="signup" class="btn btn-primary w-50" value="SignUp">
+            <input type="submit" name="supplier-up" class="btn btn-primary w-50" value="SignUp">
           </div>
         </form>
       </div>
