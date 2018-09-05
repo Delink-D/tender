@@ -21,7 +21,7 @@
           </div>
 
           <div class="form-group">
-            <input type="submit" name="login" class="btn btn-primary" value="SignIn">
+            <input type="submit" name="loginS" class="btn btn-primary" value="SignIn">
 
             or <a data-dismiss="modal" aria-label="Close" data-toggle="modal" data-target="#signupModal" id="signup">Sign Up</a>
           </div>
@@ -54,7 +54,7 @@
           </div>
 
           <div class="form-group">
-            <input type="submit" name="login" class="btn btn-primary" value="SignIn">
+            <input type="submit" name="loginO" class="btn btn-primary" value="SignIn">
           </div>
         </form>
       </div>
