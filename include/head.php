@@ -58,7 +58,7 @@
               </ul>
             <div class="dropdown">
               <a class="btn dropdown-toggle" style="font-size: 22px;" href="#" role="button" id="profile" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                <?php echo $username; ?> <i class="material-icons" style="font-size: 22px;">account_circle</i>
+                <?php if ($username) { echo $username; } else { echo $_SESSION['_user']['username']; } ?> <i class="material-icons" style="font-size: 22px;">account_circle</i>
               </a>
               <div class="dropdown-menu" aria-labelledby="profile">
                 <a class="dropdown-item" href="#">Profile</a>
@@ -69,7 +69,7 @@
                   <a class="dropdown-item" href="pastbids.php">Past Tenders</a>
                   <a class="dropdown-item" href="company.php">Company Details</a>
 
-                <?php } if ($_SESSION['_user']['category'] === 'officer') { ?>
+                <?php } if ($_SESSION['_user']['level'] === 'officer') { ?>
 
                   <a class="dropdown-item" href="tenderadd.php">Add Tender</a>
                   <a class="dropdown-item" href="tenderverify.php">Verify Applications</a>
