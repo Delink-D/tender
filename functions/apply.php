@@ -1,11 +1,11 @@
 <?php
 // get data from form
+session_start();
 
-// $company = $_SESSION['_company']['_id'];
 $compliance = $_FILES ['compliance']['tmp_name'];
 $kracert = $_FILES ['krapin']['tmp_name'];
 $compcert = $_FILES ['compcert']['tmp_name'];
-$company = 1;
+$company = $_SESSION['user']['_id'];
 $tender = $_POST['tender'];
 
 if ($_POST['apply']) {
@@ -20,7 +20,8 @@ if ($_POST['apply']) {
     header('location: ../apply.php?id='.$tender.'&&msg=saved');
   } else {
     // error saving
-    header('location: ../apply.php?id='.$tender.'&&msg=error-saving');
+    echo mysqli_error($db);
+    // header('location: ../apply.php?id='.$tender.'&&msg=error-saving');
   }
 
 } else {

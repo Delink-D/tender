@@ -2,7 +2,7 @@
   session_start();
 
   // check if user is logged in before accessing this page
-  if ($_SESSION['_login'] && ($_SESSION['_user']['category'] === 'supplier')) {
+  if ($_SESSION['_login'] && ($_SESSION['_user']['level'] === 'supplier')) {
     include 'include/head.php';
 
     // get the tender id
@@ -45,6 +45,8 @@
         $category = "N/A";
         break;
     }
+
+    $company = $_SESSION['_user']['company_name'];
 ?>
 
 <!-- tender intro -->
@@ -80,7 +82,7 @@
           <div class="row">
             <div class="form-group col">
               <label for="compname">Company name</label>
-              <input type="text" readonly name="compname" class="form-control" placeholder="Company Name" id="compname">
+              <input type="text" readonly name="compname" class="form-control" value="<?php echo $company; ?>" placeholder="Company Name" id="compname">
               <input type="text" hidden readonly name="tender" value="<?php echo $_id; ?>">
             </div>
           </div>
