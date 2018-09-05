@@ -76,18 +76,19 @@
         </button>
       </div>
       <div class="modal-body">
-        <form action="functions/apply.php" method="post" id="signInForm">
+        <form action="functions/apply.php" method="post" id="signInForm" enctype="multipart/form-data">
           <div class="row">
             <div class="form-group col">
               <label for="compname">Company name</label>
               <input type="text" readonly name="compname" class="form-control" placeholder="Company Name" id="compname">
+              <input type="text" hidden readonly name="tender" value="<?php echo $_id; ?>">
             </div>
           </div>
 
           <div class="row">
             <div class="form-group col">
-              <label for="fname">Compliance Cert</label>
-              <input type="file" class="form-control-file" name="compcomliance" id="compcert" accept="application/pdf">
+              <label for="compliance">Compliance Cert</label>
+              <input type="file" class="form-control-file" name="compliance" id="compliance" accept="application/pdf">
             </div>
 
             <div class="form-group col">
