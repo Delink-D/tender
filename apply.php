@@ -76,8 +76,36 @@
         </button>
       </div>
       <div class="modal-body">
-        <form action="functions/login.php" method="post" id="signInForm">
-          Apply for a tender!! Comming soon :)
+        <form action="functions/apply.php" method="post" id="signInForm">
+          <div class="row">
+            <div class="form-group col">
+              <label for="compname">Company name</label>
+              <input type="text" readonly name="compname" class="form-control" placeholder="Company Name" id="compname">
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="form-group col">
+              <label for="fname">Compliance Cert</label>
+              <input type="file" class="form-control-file" name="compcomliance" id="compcert" accept="application/pdf">
+            </div>
+
+            <div class="form-group col">
+              <label for="krapin">KRA Cert Pin</label>
+              <input type="file" class="form-control-file" name="krapin" id="krapin" accept="application/pdf">
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="form-group col">
+              <label for="compcert">Company Cert</label>
+              <input type="file" class="form-control-file" name="compcert" id="compcert" accept="application/pdf">
+            </div>
+          </div>
+
+          <div class="form-group">
+            <input type="submit" name="apply" class="btn btn-primary w-50" value="Apply Tender">
+          </div>
         </form>
       </div>
     </div>
