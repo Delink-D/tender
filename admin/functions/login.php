@@ -8,7 +8,7 @@ if ($_POST['adminlogin']) {
   include '../../env/db.php';
 
   // get user details
-  $sql = "SELECT * FROM users WHERE username = '$userId' AND category = 'admin'";
+  $sql = "SELECT * FROM users WHERE username = '$userId' AND level = 'admin'";
   $query = mysqli_query($db, $sql);
 
   if (mysqli_num_rows($query) !== 1) {

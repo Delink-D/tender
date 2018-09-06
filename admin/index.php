@@ -1,9 +1,8 @@
 <?php
   session_start();
   include '../env/db.php';
-
   $user = $_SESSION['_user'];
-  if ($user['category'] !== 'admin') {
+  if ($user['level'] !== 'admin') {
     // redirect to login page
     header('location: login.php');
   }
