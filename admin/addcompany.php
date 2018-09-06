@@ -16,7 +16,7 @@
     </thead>
     <tbody>
       <?php
-        $c_sql = mysqli_query($db, "SELECT * FROM companies");
+        $c_sql = mysqli_query($db, "SELECT * FROM suppliers");
         if (mysqli_num_rows($c_sql) < 1) {
           echo "
             <tr>
